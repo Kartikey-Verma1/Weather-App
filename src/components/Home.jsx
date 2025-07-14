@@ -31,7 +31,7 @@ const Home = () => {
                 setdailydata(daily_weather)
                 sethourlydata(hourly_weather);
             }
-            // setloading(false);
+            setloading(false);
         }
         fetchData();
     }, [city])

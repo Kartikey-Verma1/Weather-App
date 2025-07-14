@@ -27,7 +27,7 @@ This allows reviewers or contributors to:
 - Understand the data flow logic using placeholder data
 
 ### 📍 Where to enable real data fetching:
-To re-enable API functionality, simply uncomment the relevant logic in the file: `Home.jsx`
+To re-enable API functionality, simply uncomment the relevant logic in the file: `src/components/Home.jsx`
 
 
 ## 📦 Installation & Setup

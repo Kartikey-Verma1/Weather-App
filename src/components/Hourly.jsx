@@ -1,4 +1,3 @@
-import hourly_weather from "../utils/hourly_api"
 import React, { useRef, useEffect } from 'react';
 import Card from "./Card"
 
@@ -24,12 +23,11 @@ const Hourly = ({data})=>{
     },[])
     
     
-    // if (!data?.hourly) {
-    //     return <div>Loading current weather...</div>;
-    // }
+    if (!data?.hourly) {
+        return <div className="problem">Sorry this is API problem</div>;
+    }
     
-    // const hourlyData = data?.hourly?.data;
-    const hourlyData = hourly_weather?.hourly?.data;
+    const hourlyData = data?.hourly?.data;
 
     return(
         <div className="slider_container">

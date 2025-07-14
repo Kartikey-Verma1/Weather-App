@@ -1,15 +1,13 @@
-import current_weather from "../utils/current_api.js";
 import CurrentDetail from "./CurrentDetail.jsx";
 import { TEMP_UNIT } from "../utils/units.js";
 import { WEATHER_ICON_URL } from "../utils/constants.js";
 
 const Current = ({data, city})=>{
-    const currentWeather = current_weather;
 
-    // const currentWeather = data;
+    const currentWeather = data;
 
     if (!currentWeather?.current) {
-        return <div>Loading current weather...</div>;
+        return <div className="problem">Sorry this is API problem</div>;
     }
 
     const {temperature, feels_like, cloud_cover, humidity, uv_index, visibility, icon_num} = currentWeather?.current

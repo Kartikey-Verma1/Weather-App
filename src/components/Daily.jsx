@@ -1,4 +1,3 @@
-import daily_weather from "../utils/daily_api";
 import Card from "./Card";
 import { useEffect, useRef } from "react";
 
@@ -24,12 +23,11 @@ const Daily = ({data}) => {
     
     
     
-    // if (!data?.daily) {
-    //     return <div>Loading current weather...</div>;
-    // }
+    if (!data?.daily) {
+        return <div className="problem">Sorry this is API problem</div>;
+    }
     
-    // const dailyData = data?.daily?.data;
-    const dailyData = daily_weather?.daily?.data;
+    const dailyData = data?.daily?.data;
 
     return (
         <div className="slider_container">

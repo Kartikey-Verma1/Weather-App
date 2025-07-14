@@ -34,6 +34,9 @@ body::-webkit-scrollbar-thumb{
     
     min-height: 87vh;
 }
+.problem{
+    color: whitesmoke;
+}
 /* ***************************  Header  ********************************* */
 .header{
     display: flex;
@@ -454,49 +457,49 @@ body::-webkit-scrollbar-thumb{
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    & .shimmer_current{
-        display: flex;
-        gap: 5rem;
-        justify-content: center;
-        margin: 50px 10px;
-        margin-bottom: 0;
-        & .shimmer_current_card1{
-            width: 20rem;
-            height: 14rem;
-            background-color: var(--shimmercolor);
-            border-radius: 10px;
-        }
-        & .shimmer_current_card2{
-            width: 30rem;
-            height: 14rem;
-            border-radius: 10px;
-            background-color: var(--shimmercolor);
-        }
-    }
-    
-    & .shimmer_slider_container{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 20px 0;
-        & .shimmer_slider{
-            width: 55rem;
-            overflow-y: hidden;
-            overflow-x: auto;
-            display: flex;
-            gap: 10px;
-            & .shimmer_slider_card{
-                min-width: 150px;
-                min-height: 200px;
-                text-align: center;
-                background-color: var(--shimmercolor);
-                border-radius: 5px;
-            }
-        }
-        & .shimmer_slider::-webkit-scrollbar{
-            display: none;
-        }
-    }
+}
+.shimmer_current{
+    display: flex;
+    gap: 5rem;
+    justify-content: center;
+    margin: 50px 10px;
+    margin-bottom: 0;
+}
+.shimmer_current_card1{
+    width: 20rem;
+    height: 14rem;
+    background-color: var(--shimmercolor);
+    border-radius: 10px;
+}
+.shimmer_current_card2{
+    width: 30rem;
+    height: 14rem;
+    border-radius: 10px;
+    background-color: var(--shimmercolor);
+}
+
+.shimmer_slider_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+.shimmer_slider{
+    width: 55rem;
+    overflow-y: hidden;
+    overflow-x: auto;
+    display: flex;
+    gap: 10px;
+}
+.shimmer_slider_card{
+    min-width: 150px;
+    min-height: 200px;
+    text-align: center;
+    background-color: var(--shimmercolor);
+    border-radius: 5px;
+}
+.shimmer_slider::-webkit-scrollbar{
+    display: none;
 }
 
 /* ***************************  Shimmer  ********************************* */
@@ -516,10 +519,10 @@ body::-webkit-scrollbar-thumb{
     .current{
         gap: 2rem;
     }
-    .slider, .slider_heading{
+    .slider, .slider_heading, .shimmer_slider{
         width: 42rem;
     }
-    .current_details{
+    .current_details, .shimmer_current_card2{
         width: 20rem;
     }
     .current_weather, .current_details{
@@ -532,23 +535,23 @@ body::-webkit-scrollbar-thumb{
 @media (width < 650px) {
     .header{
         flex-direction: column;
-        .right_side{
+        & .right_side{
             margin-bottom: 2px;
         }
     }
 }
 @media (width < 540px) {
-    .current{
+    .current, .shimmer_current{
         flex-direction: column;
         align-items: center;
-        & .current_weather, .current_details{
-            width: 80vw;
-        }
-        & .place{
-            gap: 25vw;
-        }
     }
-    .slider, .slider_heading{
+    .current_weather, .current_details, .shimmer_current_card1, .shimmer_current_card2{
+        width: 80vw;
+    }
+    .place{
+        gap: 25vw;
+    }
+    .slider, .slider_heading, .shimmer_slider{
         width: 90vw;
         padding: 15px 0;
     }

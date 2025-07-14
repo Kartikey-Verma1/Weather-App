@@ -20,7 +20,7 @@ const Home = () => {
         setloading(true);
         const fetchData = async()=>{
             let weatherData;
-            // weatherData = await fetchWeatherData(city); // uncommenting it we can use live api
+            // weatherData = await fetchWeatherData(city); // uncomment it to use live api
             if(weatherData){
                 setcurrentdata(weatherData["current"])
                 setdailydata(weatherData["daily"])

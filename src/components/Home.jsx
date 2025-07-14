@@ -10,11 +10,17 @@ import daily_weather from "../utils/daily_api";
 import hourly_weather from "../utils/hourly_api";
 
 const Home = () => {
-    const [city, setcity] = useState("Delhi");
+    const [city, setcity] = useState(()=>(
+        localStorage.getItem("lastcity") || "Delhi"
+    ));
     const [loading, setloading] = useState(true);
     const [currentdata, setcurrentdata] = useState({});
     const [dailydata, setdailydata] = useState({});
     const [hourlydata, sethourlydata] = useState({});
+
+    const handleCity = (newcity)=>{
+        localStorage.setItem("lastcity", newcity);
+    }
 
     useEffect(()=>{
         setloading(true);
@@ -33,6 +39,7 @@ const Home = () => {
             }
             setloading(false);
         }
+        handleCity(city);
         fetchData();
     }, [city])
     const renderContent = ()=>(

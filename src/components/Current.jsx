@@ -6,6 +6,10 @@ const Current = ({data, city})=>{
 
     const currentWeather = data;
 
+    if(data?.message){
+        return <div className='problem'>{data?.message}</div>
+    }
+
     if (!currentWeather?.current) {
         return <div className="problem">Sorry this is API problem</div>;
     }

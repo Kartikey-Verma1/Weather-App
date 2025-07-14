@@ -21,7 +21,9 @@ const Daily = ({data}) => {
         };
     }, []);
     
-    
+    if(data?.message){
+        return <div className='problem'></div>
+    }
     
     if (!data?.daily) {
         return <div className="problem">Sorry this is API problem</div>;

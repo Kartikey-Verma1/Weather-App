@@ -1,0 +1,565 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root{
+    --lightblue: rgb(74, 215, 247);
+    --backcolor: rgb(22, 22, 22);
+    --shimmercolor: rgb(40, 40, 40);
+}
+@keyframes navanime {
+    0%{
+        transform: translate(0, -9vh);
+    }
+}
+html{
+    font-size: 16px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--backcolor);
+    font-family: Poppins;
+}
+body::-webkit-scrollbar{
+    width: 10px;
+    background-color: transparent;
+    border-radius: 10px;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: rgb(162, 162, 162);
+    border-radius: 10px;
+}
+.body{
+    
+    min-height: 87vh;
+}
+/* ***************************  Header  ********************************* */
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    animation: navanime 0.2s linear 0.1s 1;
+    box-shadow: 0px 0px 0px 0.7px rgb(146, 146, 146);
+    letter-spacing: 1px;
+}
+.left_side{
+    display: flex;
+    margin-left: 1vw;
+    align-items: center;
+    gap: 1vw;
+    height: 60px;
+}
+.header_list{
+    display: flex;
+    list-style-type: none;
+    gap: 3vw;
+    margin-left: 2vw;
+    font-size: 1rem;
+    color: var(--lightblue);
+    & a:link{
+        color: var(--lightblue);
+        text-decoration: none;
+    }
+    & a:visited{
+        color: var(--lightblue)
+    }
+}
+.appHead{
+    color: rgb(27, 87, 191);
+    font-size: 1.6rem;
+    font-weight: 600;
+    cursor: default;
+}
+.weather{
+    color: rgb(218, 143, 15);
+}
+.app_icon{
+    width: 3.5rem;
+}
+.right_side{
+    margin-right: 2vw;
+}
+.dropimg{
+    width: 0.8rem;
+    margin-left: 0.3rem;
+    transform: translateY(-25%);
+}
+.head-list-item{
+    cursor: pointer;
+    position:relative;
+    font-weight: 500;
+}
+.head-list-item::before{
+    content: "";
+    position: absolute;
+    border-bottom: 3px solid var(--lightblue);
+    border-radius: 10px;
+    left: 0;
+    width: 0%;
+    bottom: -2px;
+    transition: all 0.2s ease-in-out 0s;
+}
+.head-list-item:hover::before{
+    width: 100%;
+}
+.item2{
+    position: relative;
+}
+.dropdown-menu{
+    width:max-content;
+    position: absolute;
+    background-color: aliceblue;
+    color: rgb(42, 78, 107);
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 1;
+    right: 0;
+    top: 30px;
+    list-style-type: none;
+    cursor: default;
+    /* transition: all 0.2s ease-in-out 0s; */
+    & .tech_used{
+        display: flex;
+        gap: 30px;
+        list-style-type: circle;
+        list-style-position: inside;
+        & li{
+            cursor: text;
+        }
+    }
+    & li:nth-of-type(2){
+        cursor: text;
+    }
+    & a:link{
+        color: rgb(42, 78, 107);
+    }
+    & a:visited{
+        color: rgb(42, 78, 107);
+    }
+}
+/* ***************************  Header  ********************************* */
+.home{
+    letter-spacing: 1px;
+}
+/* ***************************  Search Button  ********************************* */
+
+#citySearch{
+    position: relative;
+
+    height: 1.9rem;
+    width: 16rem;
+    border-radius: 50px;
+    background-color: rgb(96, 96, 96);
+    font-size: 1rem;
+    padding: 0px 10px;
+    padding-right: 2.4rem;
+    color: white;
+    letter-spacing: 1px;
+
+    border: none;
+    &:focus{
+        outline: none;
+    }
+    &::placeholder{
+        color: rgb(156, 156, 156);
+    }
+}
+
+#city_submit{
+    position: absolute;
+    right: 1.3rem;
+
+    background-color: rgb(96, 96, 96);
+    margin: 0 2px;
+    height: 1.8rem;
+    width: 1.8rem;
+    border-radius: 50px;
+    font-size: 15px;
+    color: rgb(199, 198, 198);
+    border: none;
+    cursor: pointer;
+    
+}
+#search_icon{
+    height: 1.5rem;
+    transform: translateY(5%);
+}
+.input{
+    display: block;
+    text-align: right;
+    margin: 1rem;
+    margin-bottom: 0;
+}
+
+/* ***************************  Search Button  ********************************* */
+
+/* ***************************  Current Weather Card  ********************************* */
+
+.current_weather{
+    width: 20rem;
+    height: 14rem;
+    border: 1px solid whitesmoke;
+    border-radius: 10px;
+    padding: 8px;
+    padding-left: 20px;
+}
+#temp_main{
+    font-size: 2.5rem;
+}
+#feels_like_main{
+    font-size: 0.9rem;
+}
+#clouds_main{
+    font-size: 1.2rem;
+}
+#weather_icon{
+    height: 5.5rem;
+}
+#icons{
+    height: 1.3rem;
+}
+#icons1{
+    height: 1.1rem;
+}
+.current{
+    display: flex;
+    gap: 5rem;
+    justify-content: center;
+    color: whitesmoke;
+    margin: 20px 10px;
+    margin-bottom: 0;
+}
+.current_details{
+    width: 30rem;
+    height: 14rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    font-size: 0.9rem;
+    border: 1px solid whitesmoke;
+    border-radius: 10px;
+    padding: 10px;
+}
+.icon_and_value{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+#icon_name{
+    text-align: center;
+}
+.place{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.area{
+    margin-top: 45px;
+    font-size: 1.5rem;
+}
+/* ***************************  Current Weather Card  ********************************* */
+
+/* ***************************  Hourly Daily Weather Card  ********************************* */
+.slider_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    color: whitesmoke;
+    margin: 20px 0;
+}
+.slider_heading{
+    text-align: left;
+    width: 55rem;
+    & h2{
+        font-weight: 600;
+    }
+}
+.slider{
+    width: 55rem;
+    overflow-y: hidden;
+    overflow-x: auto;
+    display: flex;
+    gap: 10px;
+    /* scroll-behavior: smooth; */
+}
+.slider::-webkit-scrollbar {
+    display: none;
+}
+.card{
+    min-width: 150px;
+    text-align: center;
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+}
+/* ***************************  Hourly Daily Weather Card  ********************************* */
+
+/* ***************************  Contact  ********************************* */
+
+.contact{
+    color: whitesmoke;
+    padding: 2rem 10rem;
+    letter-spacing: 1px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.contact_head{
+    font-weight: 500;
+}
+.form_contact{
+    width: 40rem;
+    border: 1px solid whitesmoke;
+    border-radius: 10px;
+    padding: 10px 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    & button{
+        width: 15rem;
+        height: 2rem;
+        border-radius: 5px;
+        align-self: center;
+        font-size: 16px;
+        letter-spacing: 1px;
+        background-color: rgb(96, 96, 96);
+        color: whitesmoke;
+        border: none;
+        cursor: pointer;
+    }
+}
+.form_container{
+    display: flex;
+    justify-content: center;
+}
+.form_detail{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    & input{
+        width: 20rem;
+        height: 25px;
+        border-radius: 5px;
+        font-size: 14px;
+        padding: 0 5px;
+        letter-spacing: 1px;
+        background-color: rgb(96, 96, 96);
+        color: whitesmoke;
+    }
+    & input:focus{
+        border: none;
+        outline: none;
+    }
+    & input::placeholder{
+        color: rgb(151, 151, 151);
+    }
+}
+.form_message{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    & textarea{
+        width: 100%;
+        height: 10rem;
+        resize: none;
+        border-radius: 5px;
+        padding: 5px;
+        font-family: Poppins;
+        letter-spacing: 1px;
+        background-color: rgb(96, 96, 96);
+        color: whitesmoke;
+    }
+    & textarea:focus{
+        outline: none;
+    }
+    & textarea::-webkit-scrollbar{
+        display: none;
+    }
+    & textarea::placeholder{
+        color: rgb(151, 151, 151);
+    }
+}
+
+/* ***************************  Contact  ********************************* */
+
+/* ***************************  Footer  ********************************* */
+
+.footer{
+    color: whitesmoke;
+    background-color: rgb(40, 40, 40);
+    padding: 15px 5rem;
+}
+.copyright{
+    text-align: center;
+}
+.footer_content{
+    display: flex;
+    justify-content: space-between;
+}
+.footer_left{
+    display: flex;
+    align-items: center;
+}
+.footer_right{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+/* ***************************  Footer  ********************************* */
+
+/* ***************************  Overview  ********************************* */
+
+.overview{
+    /* height: 90vh; */
+    color: whitesmoke;
+    padding: 4rem 8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+    & p{
+        font-size: 1.2rem;
+    }
+}
+.overview_head{
+    font-weight: 500;
+}
+
+/* ***************************  Overview  ********************************* */
+
+/* ***************************  Error  ********************************* */
+
+.error{
+    color: whitesmoke;
+    & #oops{
+        font-size: 5rem;
+        margin: 1rem 2rem; 
+    }
+    & #swr, #error-code{
+        font-size: 2rem;
+        margin: 1rem 2rem;
+    }
+}
+
+/* ***************************  Error  ********************************* */
+
+/* ***************************  Shimmer  ********************************* */
+
+.shimmer_body{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    & .shimmer_current{
+        display: flex;
+        gap: 5rem;
+        justify-content: center;
+        margin: 50px 10px;
+        margin-bottom: 0;
+        & .shimmer_current_card1{
+            width: 20rem;
+            height: 14rem;
+            background-color: var(--shimmercolor);
+            border-radius: 10px;
+        }
+        & .shimmer_current_card2{
+            width: 30rem;
+            height: 14rem;
+            border-radius: 10px;
+            background-color: var(--shimmercolor);
+        }
+    }
+    
+    & .shimmer_slider_container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px 0;
+        & .shimmer_slider{
+            width: 55rem;
+            overflow-y: hidden;
+            overflow-x: auto;
+            display: flex;
+            gap: 10px;
+            & .shimmer_slider_card{
+                min-width: 150px;
+                min-height: 200px;
+                text-align: center;
+                background-color: var(--shimmercolor);
+                border-radius: 5px;
+            }
+        }
+        & .shimmer_slider::-webkit-scrollbar{
+            display: none;
+        }
+    }
+}
+
+/* ***************************  Shimmer  ********************************* */
+
+
+@media (width < 950px) {
+    html{
+        font-size: 14px;
+    }
+}
+@media (width < 800px) {
+    html{
+        font-size: 12px;
+    }
+}
+@media (width < 700px) {
+    .current{
+        gap: 2rem;
+    }
+    .slider, .slider_heading{
+        width: 42rem;
+    }
+    .current_details{
+        width: 20rem;
+    }
+    .current_weather, .current_details{
+        height: 15.5rem;
+    }
+    .footer{
+        padding: 15px 2rem;
+    }
+}
+@media (width < 650px) {
+    .header{
+        flex-direction: column;
+        .right_side{
+            margin-bottom: 2px;
+        }
+    }
+}
+@media (width < 540px) {
+    .current{
+        flex-direction: column;
+        align-items: center;
+        & .current_weather, .current_details{
+            width: 80vw;
+        }
+        & .place{
+            gap: 25vw;
+        }
+    }
+    .slider, .slider_heading{
+        width: 90vw;
+        padding: 15px 0;
+    }
+    .footer_left, .footer_right{
+        padding: 0 5px;
+    }
+}
+@media (width < 320px) {
+    .current{
+        & .place{
+            gap: 30px;
+        }
+    }
+}

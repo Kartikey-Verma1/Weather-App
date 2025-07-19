@@ -558,6 +558,16 @@ body::-webkit-scrollbar-thumb{
     .footer_left, .footer_right{
         padding: 0 5px;
     }
+    .overview{
+        padding: 4rem 3rem;
+    }
+    .contact{
+        padding: 2rem 3rem;
+    }
+    .form_contact{
+        padding: 10px 4vw;
+        width: 90vw;
+    }
 }
 @media (width < 320px) {
     .current{
